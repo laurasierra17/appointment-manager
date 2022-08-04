@@ -35,6 +35,7 @@ Appointment.init(
     room_number: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      'lauraisnothappy'
     },
   },
   {
