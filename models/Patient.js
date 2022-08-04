@@ -1,15 +1,15 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
-const { DataTypes } = require('sequelize/types');
+const { DataTypes, DataTypes, DataTypes, DataTypes } = require('sequelize/types');
 
-class Appointment extends Model {
+class Patient extends Model {
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
 
-Appointment.init(
+Patient.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -20,8 +20,24 @@ Appointment.init(
     first_name: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {isAlpha:true},
     },
     last_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {isAlpha:true},
+    },
+    user_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {isAlphanumeric:true},
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {len:[8]},
+    },
+    visit_reason: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -41,8 +57,8 @@ Appointment.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'appointment',
+    modelName: 'patient',
   }
 );
 
-module.exports = Appointment;
+module.exports = Patient;
