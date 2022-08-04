@@ -16,26 +16,13 @@ Appointment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    doctor_id: {
-      type: DataTypes.INTEGER,
+    first_name: {
+      type: DataTypes.STRING,
       allowNull: false,
-      reference: {
-        model: "doctor",
-        key: "id",
-      },
-    },
-    patient_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      reference: {
-        model: "patient",
-        key: "id",
-      },
     },
     room_number: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      'lauraisnothappy'
     },
   },
   {
