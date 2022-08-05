@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fund My Project!</title>
+    {{!-- Bulma CDN --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+    <body>
+        <header>
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                {{!-- Logo --}}
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="/">
+                        <img src="./images/HAM-logo.png" width="112" height="28">
+                    </a>
+                </div>
+
+                {{!-- Links --}}
+                <div class="navbar-menu">
+                    <div class="navbar-end">
+                        <a class="navbar-item">Dashboard</a>
+                        <a class="navbar-item">Profile</a>
+                        <div class="navbar-item">
+                            <div class="buttons">
+                                <a class="button is-light">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            {{{ body }}}
+        </main>
+    </body>
+</html>
