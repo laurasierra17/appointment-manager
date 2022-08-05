@@ -1,15 +1,41 @@
-const sequelize = require('../config/connection');
-const seedDepartments = require('./department-seeds');
-const seedDoctors = require('./doctor-seeds');
+// const sequelize = require('../config/connection');
+// const seedDepartments = require('./department-seeds');
+// const seedDoctors = require('./doctor-seeds');
 
-const seedAll = async () => {
+// const seedAll = async () => {
+//   await sequelize.sync({ force: true });
+
+//   await seedDepartments();
+
+//   await seedDoctors();
+
+//   process.exit(0);
+// };
+
+// seedAll();
+
+const sequelize = require('../config/connection');
+const { Appointment, Department, Doctor, Patient } = require('../models');
+
+const departmentData = require('./departmentData.json');
+const doctorData = require('./doctorData.json');
+
+const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  await seedGallery();
+  const departments = await Department.bulkCreate(departmentData, {
+    individualHooks: true,
+    returning: true,
+  });
 
-  await seedPaintings();
+  for (const project of projectData) {
+    await Project.create({
+      ...project,
+      user_id: users[Math.floor(Math.random() * users.length)].id,
+    });
+  }
 
   process.exit(0);
 };
 
-seedAll();
+seedDatabase();
