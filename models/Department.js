@@ -1,12 +1,11 @@
 const { Model, DataTypes } = require('sequelize');
-
 const sequelize = require('../config/connection');
 
-class Appointment extends Model {
+class Department extends Model {
   
 }
 
-Appointment.init(
+Department.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -14,25 +13,14 @@ Appointment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    doctor_id: {
-      type: DataTypes.INTEGER,
+    name: {
+      type: DataTypes.STRING,
       allowNull: false,
+      validate: {isAlpha:true},
       reference: {
         model: "doctor",
         key: "id",
       },
-    },
-    patient_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      reference: {
-        model: "patient",
-        key: "id",
-      },
-    },
-    room_number: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
     },
   },
   {
@@ -41,8 +29,8 @@ Appointment.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'appointment',
+    modelName: 'department',
   }
 );
 
-module.exports = Appointment;
+module.exports = Department;

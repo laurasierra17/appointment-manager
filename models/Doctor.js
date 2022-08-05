@@ -1,12 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
+
 const sequelize = require('../config/connection');
 const { DataTypes, DataTypes, DataTypes, DataTypes } = require('sequelize/types');
 
 class Doctor extends Model {
-  checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
-  }
 }
 
 Doctor.init(
@@ -27,10 +24,14 @@ Doctor.init(
       allowNull: false,
       validate: {isAlpha:true},
     },
-    department: {
+    department_id: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate: {isAlpha:true}
+        validate: {isAlpha:true},
+        reference: {
+            model: 'department',
+            key: 'id',
+        }
     },
     shift_start: {
         type: DataTypes.DATE,
