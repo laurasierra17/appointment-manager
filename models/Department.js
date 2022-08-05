@@ -16,10 +16,6 @@ Department.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {isAlpha:true},
-      reference: {
-        model: "doctor",
-        key: "id",
-      },
     },
   },
   {
