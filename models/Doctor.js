@@ -1,10 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
-
 const sequelize = require('../config/connection');
-// const { DataTypes, DataTypes, DataTypes, DataTypes } = require('sequelize/types');
 
-class Doctor extends Model {
-}
+class Doctor extends Model {}
 
 Doctor.init(
   {
@@ -25,9 +22,8 @@ Doctor.init(
       validate: {isAlpha:true},
     },
     department_id: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
-        validate: {isAlpha:true},
         reference: {
             model: 'department',
             key: 'id',
