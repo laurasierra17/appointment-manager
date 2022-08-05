@@ -1,0 +1,46 @@
+
+  [
+  {
+    "first_name": "Dr.",
+    "last_name": "Sierra",
+    "department_id": "1",
+    "shift_start": "2022-08-11 09:00:00",
+    "shift_end": "2022-08-11 14:00:00"
+  },
+  {
+    "first_name": "Dr.",
+    "last_name": "Mccarthy",
+    "department_id": "2",
+    "shift_start": "2022-08-11 14:00:00",
+    "shift_end": "2022-08-11 19:00:00"
+  },
+  {
+    "first_name": "Dr.",
+    "last_name": "Zhang",
+    "department_id": "3",
+    "shift_start": "2022-08-12 09:00:00",
+    "shift_end": "2022-08-12 14:00:00"
+  },
+  {
+    "first_name": "Dr.",
+    "last_name": "Lee",
+    "department_id": "4",
+    "shift_start": "2022-08-12 14:00:00",
+    "shift_end": "2022-08-12 19:00:00"
+  },
+  {
+    "first_name": "Dr.",
+    "last_name": "Chenette",
+    "department_id": "5",
+    "shift_start": "2022-08-13 11:00:00",
+    "shift_end": "2022-08-13 15:00:00"
+  },
+  {
+    "first_name": "Dr.",
+    "last_name": "Nunes",
+    "department_id": "6",
+    "shift_start": "2022-08-13 15:00:00",
+    "shift_end": "2022-08-11 19:00:00"
+  }
+]
+
