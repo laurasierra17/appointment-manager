@@ -39,6 +39,6 @@ const doctorData = [
   },
 ];
 
-const seedCategories = () => Doctor.bulkCreate(doctorData);
+const seedDoctors = () => Doctor.bulkCreate(doctorData);
 
-module.exports = seedCategories;
+module.exports = seedDoctors;
