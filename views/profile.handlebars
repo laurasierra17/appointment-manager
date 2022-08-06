@@ -1,0 +1,36 @@
+<div class="profile">
+    <div>
+        <h1>Hi, {{first_name}} {{last_name}}!</h1>
+        <h2>In this page, you are able to view your upcoming appointments and make as many changes as you'd like!</h2>
+    </div>
+
+    {{!-- Container with list of appointments. Most recently added are at the top --}}
+    <div>
+        {{!-- If the user has never made an appointment --}}
+        {{#if appointment}}
+        {{#each appointments as |appointment|}}
+        <div class="container is-fullhd">
+            <h3>Visit with Dr. Smith</h3>
+            {{!-- contianer --}}
+            <div class="container is-flex-direction-row is-justify-content-space-between">
+                {{!-- container left has date, time, reason for visit --}}
+                <section id="appt-info">
+                    <h4>Date: January 14th, 2022</h4>
+                    <h4>Time: 3:15 PM</h4>
+                    <p>Reason for visit: idk</p>
+                </section>
+                {{!-- container right has edit and cancel buttons --}}
+                <section class="is-flex-direction-row" id="appt-btns">
+                    <button>Edit</button>
+                    <button>Cancel</button>
+                </section>
+            </div>
+        </div>
+        {{/each}}
+
+        {{else}}
+        <h3>You have not scheduled an appointment yet.</h3>
+        {{/if}}
+    </div>
+
+</div>
