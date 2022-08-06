@@ -1,0 +1,8 @@
+/* Logo image */
+#logo-img {
+    height: auto;
+    width: auto;
+    max-width: 70px;
+    max-height: 70px;
+    padding-left: 10px;
+}
