@@ -1,3 +1,4 @@
+// Functionality for the hamburger menu
 (function() {
     var burger = $('.navbar-toggle');
     var menu = $('.navbar-menu');
