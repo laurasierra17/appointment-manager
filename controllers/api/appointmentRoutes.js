@@ -34,8 +34,27 @@ router.put('/:id', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-})
+});
 
 // Delete an appointment
+router.delete('/:id', async (req, res) => {
+    try {
+        const appData = await Appointment.destroy({
+            where: {
+                id: req.params.id,
+                patient_id: req.session.patient_id
+            }
+        });
+
+        if (!apptData) {
+            res.status(400).json({ message: 'No appointment found' });
+            return;
+        }
+
+        res.status(200).json(appData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 module.exports = router;
