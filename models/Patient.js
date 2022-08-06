@@ -36,10 +36,6 @@ Patient.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {len:[8]},
-    },
-    visit_reason: {
-      type: DataTypes.STRING,
-      allowNull: true,
     }
   },
   {

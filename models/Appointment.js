@@ -27,6 +27,10 @@ Appointment.init(
         key: "id",
       },
     },
+    visit_reason: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     room_number: {
       type: DataTypes.INTEGER,
       allowNull: false,
