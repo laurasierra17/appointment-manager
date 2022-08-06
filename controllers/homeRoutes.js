@@ -5,13 +5,13 @@ const { Patient, Appointment } = require('../models')
 router.get('/profile/:id' , async (req, res) => {
     try {
         // Find patient based on user id stored in session
-        // const patientData = await Patient.findByPk(req.session.patient_id, {
-        //     include: {
-        //         model: Appointment
-        //     }
-        // });
-        // // Parse for readability
-        // patientData = patientData.get({ plain: true });
+        const patientData = await Patient.findByPk(req.session.patient_id, {
+            include: {
+                model: Appointment
+            }
+        });
+        // Parse for readability
+        patientData = patientData.get({ plain: true });
 
         res.render('profile');
         // res.render('profile', { ...patientData })
