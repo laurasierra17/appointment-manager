@@ -31,6 +31,7 @@ Patient.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {isAlphanumeric:true},
+      unique: true,
     },
     password: {
       type: DataTypes.STRING,
