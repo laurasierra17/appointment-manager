@@ -1,6 +1,6 @@
 .middle {
     margin: auto;
-    margin-top: 6%;
+    margin-top: 3%;
 }
 
 input {
@@ -16,7 +16,7 @@ header {
 
 .mytitle{
 font-size: 300%;
-font-weight: bolder;
+font-weight:lighter;
 color: rgb(59, 54, 54);
 
 }
