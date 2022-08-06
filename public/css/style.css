@@ -1,3 +1,9 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
 /* Logo image */
 #logo-img {
     height: auto;
@@ -5,4 +11,10 @@
     max-width: 70px;
     max-height: 70px;
     padding-left: 10px;
+}
+
+/* Main container of the profile page */
+.profile {
+    max-width: 60%;
+    margin: 0 auto;
 }
