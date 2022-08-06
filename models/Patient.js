@@ -39,11 +39,11 @@ Patient.init(
     },
     visit_reason: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     room_number: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
   },
   {

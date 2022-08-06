@@ -1,16 +1,22 @@
-const loginButton = $('loginbtn');
-const USERNAME = $('username');
-const PASSWORD = $('password');
-const signupButton = $('signupbtn');
+
+// login page elements
+let loginButton = $('loginbtn');
+let username1 = $('username').value;
+let password1 = $('password').value;
+let signupButton = $('signupbtn');
+let username2 = $('username2').value;
+let password2 = $('password2').value;
+let firstName = $('firstname').value;
+let lastName = $('lastname').value;
 // set up some routes and then we can connect them to the event listeners
 // possibly make this a middleware function 
 $(loginButton).click(() => {
-    if(USERNAME && PASSWORD) {
-        fetch(`/api/patient/${USERNAME}`, {
+    if(username1 && password1) {
+        fetch(`/api/patient/${username1}`, {
             method: "GET",
             body: JSON.stringify({
-              username: USERNAME,
-              password: PASSWORD  
+              username: username1,
+              password: password1  
             })
         })
     }
@@ -18,12 +24,14 @@ $(loginButton).click(() => {
 
 // LOGIN PAGE < - - - - - - - - 
 $(signupButton).click(() => {
-    if(USERNAME && PASSWORD) {
-        fetch(`/api/patient/${USERNAME}`, {
+    if(username2 && password2 && firstname && lastname) {
+        fetch(`/api/patient/${username2}`, {
             method: "POST",
             body: JSON.stringify({
-                username: USERNAME,
-                password: PASSWORD
+                username: username2,
+                password: password2,
+                first_name: firstName,
+                last_name: lastName
             })
         })
     }
