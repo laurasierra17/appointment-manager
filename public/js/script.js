@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 // login page elements
 let loginButton = $('loginbtn');
@@ -68,7 +68,7 @@ $(signupButton).click(() => {
 // const
 // fetch(doctors/appointements)
 
-=======
+
 // Functionality for the hamburger menu
 (function() {
     var burger = $('.navbar-toggle');
@@ -78,4 +78,4 @@ $(signupButton).click(() => {
         menu.toggleClass('is-active');
     });
 })();
->>>>>>> 0ca9d53704ea8c5706ac7c31396f98a8d239af0f
+
