@@ -36,15 +36,7 @@ Patient.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {len:[8]},
-    },
-    visit_reason: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    room_number: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-    },
+    }
   },
   {
     hooks: {

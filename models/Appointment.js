@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Appointment extends Model {}
+class Appointment extends Model { }
 
 Appointment.init(
   {
@@ -27,13 +27,22 @@ Appointment.init(
         key: "id",
       },
     },
+    visit_time: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      validate: { isDate: true },
+    },
+    visit_reason: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     room_number: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
   },
   {
-   
+
     sequelize,
     timestamps: false,
     freezeTableName: true,
