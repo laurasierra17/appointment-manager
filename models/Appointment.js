@@ -27,8 +27,13 @@ Appointment.init(
         key: "id",
       },
     },
+    visit_date: {
+      type: DataTypes.DATEONLY,
+      allowNull: false,
+      validate: { isDate: true },
+    },
     visit_time: {
-      type: DataTypes.DATE,
+      type: DataTypes.TIME,
       allowNull: false,
       validate: { isDate: true },
     },
