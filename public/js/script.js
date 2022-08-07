@@ -9,6 +9,8 @@ let username2 = $('username2').value;
 let password2 = $('password2').value;
 let firstName = $('firstname').value;
 let lastName = $('lastname').value;
+let dptBtn = $('dptmentBtn');
+let dptName = $('deptBtnName').value;
 // set up some routes and then we can connect them to the event listeners
 // possibly make this a middleware function 
 $(loginButton).click(() => {
@@ -59,7 +61,17 @@ $(signupButton).click(() => {
 //fetch(/doctors/department)
 // GET
 // serves up page with doctors of that department
-
+$(dptBtn).click(() => {
+    if(dptName) {
+        fetch(`/api/doctors/${dptName}`, {
+            method: "GET",
+            body: JSON.stringify({
+              username: username1,
+              password: password1  
+            })
+        })
+    }
+})
 
 
 
