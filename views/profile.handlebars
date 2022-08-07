@@ -11,7 +11,8 @@
         {{#if appointment}}
         <div class="container p-4" id="appointments">
             {{!-- {{#each appointments as |appointment|}} --}}
-            <div class="container is-flex is-flex-direction-row is-justify-content-space-between is-align-items-center" id="appt-container">
+            <div class="container is-flex is-flex-direction-row is-justify-content-space-between is-align-items-center"
+                id="appt-container">
                 {{!-- container left has date, time, reason for visit --}}
                 {{#each appointment as |appt|}}
                 <section id="appt-info">
@@ -33,10 +34,10 @@
                 {{/each}}
             </div>
 
-            {{else}}
-            <h3>You have not scheduled an appointment yet.</h3>
-            {{/if}} --}}
         </div>
-</div>
+        {{else}}
+        <h3>You have not scheduled an appointment yet.</h3>
+        {{/if}}
+    </div>
 
 </div>

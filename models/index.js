@@ -5,11 +5,11 @@ const Department = require('./Department');
 
 // Associations between Appointment and Patient
 Appointment.hasMany(Patient, { foreignKey: 'patient_id' });
-Patient.belongsTo(Appointment, { foreignKey: 'id' });
+Patient.belongsTo(Appointment);
 
 // // Associations between Appointment and Doctor
 Appointment.hasMany(Doctor, { foreignKey: 'doctor_id' });
-Doctor.belongsTo(Appointment, { foreignKey: 'id' });
+Doctor.belongsTo(Appointment);
 
 // Association between Doctor and Patient through Appointment
 // Doctor.belongsToMany(Patient, { as: 'patient', through: { model: Appointment} });
@@ -18,8 +18,11 @@ Doctor.belongsTo(Appointment, { foreignKey: 'id' });
 // Patient.hasMany(Doctor, {foreignKey: 'doctor_id'});
 
 // Association between Doctor and Department
-Department.hasMany(Doctor);
-Doctor.belongsTo(Department);
+Doctor.hasOne(Department, { foreignKey: 'department_id'});
+Department.belongsTo(Doctor);
+
+// Department.hasMany(Doctor, { foreignKey: ''});
+// Doctor.belongsTo(Department, { foreignKey: 'id' });
 
 module.exports = {
     Appointment,

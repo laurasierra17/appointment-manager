@@ -5,17 +5,25 @@ const { Patient, Appointment, Department, Doctor } = require('../models')
 router.get('/profile/:id', async (req, res) => {
     try {
         // Find patient based on user id stored in session
-        const patientData = await Patient.findByPk(1, {
-            attributes: ['first_name', 'last_name'],
-            include: [
-                {
-                    model: Appointment,
-                    where: {
-                        patient_id: 1,
-                    },
-                }]
-        });
-
+        // const patientData = await Patient.findAll({
+        //     where: {
+        //         id: 1
+        //     },
+        //     attributes: ['first_name', 'last_name'],
+        //     include: [
+        //         {
+        //             model: Appointment,
+        //             where: {
+        //                 patient_id: 1,
+        //             },
+        //         }]
+        // });
+        const appts = await Appointment.findAll({
+            where: {
+                patient_id: 1
+            }
+        })
+        res.json(appts);
         // if the patientData has only one appointment
         let patient;
         if (!Array.isArray(patientData)) {
@@ -41,11 +49,11 @@ router.get('/profile/:id', async (req, res) => {
         }
 
         // Render profile page with information from the database
-        res.render('profile', {
-            first_name: patientData.first_name,
-            last_name: patientData.last_name,
-            appointment
-        });
+        // res.render('profile', {
+        //     first_name: patientData.first_name,
+        //     last_name: patientData.last_name,
+        //     appointment
+        // });
     } catch (err) {
         console.log(err)
         res.status(500).json(err);
