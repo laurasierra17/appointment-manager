@@ -24,11 +24,13 @@ router.get('/dashboard', async (req, res) => {
     try { 
         const departmentData = await Department.findAll();
         // Parse for readability
-        departmentData = departmentData.get({ plain: true });
-
-        res.render('dashboard');
+        // let department = departmentData.get({ plain: true });\
+        let department = departmentData.map(department => department.get({plain: true}));
+        // res.json(department);
+        res.render('dashboard', department);
         // res.render('profile', { ...patientData })
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
