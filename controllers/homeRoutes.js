@@ -1,9 +1,8 @@
 const router = require('express').Router();
-<<<<<<< HEAD
+
 const { Patient, Appointment, Doctor, Department} = require('../models')
-=======
-const { Patient, Appointment, Department, Doctor } = require('../models')
->>>>>>> 270698c83a58fc65643a431d2cc5f6442c96548e
+
+
 
 // Render profile page of logged in patient
 router.get('/profile/:id', async (req, res) => {
