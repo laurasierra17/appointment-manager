@@ -13,7 +13,7 @@ let lastName = $('lastname').value;
 // possibly make this a middleware function 
 $(loginButton).click(() => {
     if(username1 && password1) {
-        fetch(`/api/patient/${username1}`, {
+        fetch(`/api/users/${username1}`, {
             method: "GET",
             body: JSON.stringify({
               username: username1,
@@ -26,7 +26,7 @@ $(loginButton).click(() => {
 // LOGIN PAGE < - - - - - - - - 
 $(signupButton).click(() => {
     if(username2 && password2 && firstname && lastname) {
-        fetch(`/api/patient/${username2}`, {
+        fetch(`/api/users/${username2}`, {
             method: "POST",
             body: JSON.stringify({
                 username: username2,

@@ -10,7 +10,7 @@ router.get('/:username', async (req, res) => {
             res.status(404).json({ message: 'No user exists, please use an existing username or sign up.'});
             return;
         }
-        res.status(200).json(userDatas);
+        res.redirect('/api/departments');
     } catch (err) {
         res.status(500).json(err);
     }
@@ -20,8 +20,14 @@ router.get('/:username', async (req, res) => {
 // SIGN UP
 router.post('/', async (req, res) => {
     try {
-        const userData = await Patient.create(req.body);
-        res.status(200).json(userData);
+        await Patient.create(req.body);
+        req.session.save(() => {
+            req.session.user_id = userData.id;
+            req.session.logged_in = true;
+
+            res.redirect('/dashboard');
+          });
+        
     } catch (err) {
         res.status(500).json(err);
     }
