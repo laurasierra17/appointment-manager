@@ -8,7 +8,6 @@
         <div class="columns mt-5 is-8 is-variable is-multiline">
             {{#each departments as |department|}}
             <div class="column is-4-tablet is-4-desktop">
-                <a href="https://www.w3schools.com">
                 <div class="card">
                     <div class="card-image has-text-centered px-6">
                         <figure class="image is-4by3">
@@ -17,8 +16,10 @@
                         </figure>
                     </div>
                     <div class="card-content has-text-centered">
-                        <button class = "dptmentBtn">
-                            <span class="deptBtnName title is-4">{{department.name}}</span></button>
+                        <button data-id ='{{department.id}}' class = "dptmentBtn"> 
+                            <span class="deptBtnName title is-4">{{department.name}}</span>
+                            
+                            </button>
                         
 
                     </div>
@@ -33,5 +34,3 @@
     </div>
 
 </section>
-
-<script src="./js/dashboard.js"></script>

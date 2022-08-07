@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Department } = require('../../models')
+const { Department, Doctor } = require('../../models')
 
 // Gets list of departments
 router.get('/', async (req, res) => {
@@ -14,7 +14,20 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
-    
+    try {
+        const docList = await Department.findAll({
+            include: {
+                model: Doctor,
+                where: {
+                    department_id: req.params.id,
+                }
+            }
+        });
+        const doctorsList = docList.map(doc => doc.get({plain: true}));
+        res.json(docList);
+    } catch (err) {
+        res.status(500).json(err);
+    }
    
 });
 

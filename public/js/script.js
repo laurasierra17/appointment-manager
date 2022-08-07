@@ -1,6 +1,4 @@
 
-
-
 // set up some routes and then we can connect them to the event listeners
 // possibly make this a middleware function 
 const login = async (event) => {
@@ -50,19 +48,6 @@ const signup = async (event) => {
 
 $('#form1').submit(login);
 $('#form2').submit(signup);
-// when we log in
-// const 
-//fetch(/api/email)
-
-//when we sign up
-// const
-//fetch(api/patients) {
- //   method: 'POST',
-   // headers: {
-  //    'Content-Type': '/json',
-  //  },
-
-
 
 
 // DEPARTMENTS PAGE < - - - - - - - - 
@@ -72,14 +57,14 @@ $('#form2').submit(signup);
 //fetch(/doctors/department)
 // GET
 // serves up page with doctors of that department
-$(dptBtn).click(() => {
-    if(dptName) {
-        fetch(`/api/doctors/${dptName}`, {
+
+$('.dptmentBtn').click(() => {
+    let dptId = $('.dptmentBtn').attr("data-id");
+    console.log(dptId);
+    if(dptId) {
+        fetch(`/api/department/${dptId}`, {
             method: "GET",
-            body: JSON.stringify({
-              username: username1,
-              password: password1  
-            })
+            
         })
     }
 })
