@@ -21,18 +21,21 @@ router.get('/profile/:id' , async (req, res) => {
 });
 
 router.get('/dashboard', async (req, res) => {
-    try { 
-        const departmentData = await Department.findAll();
-        // Parse for readability
-        // let department = departmentData.get({ plain: true });\
-        let department = departmentData.map(department => department.get({plain: true}));
-        // res.json(department);
-        res.render('dashboard', department);
-        // res.render('profile', { ...patientData })
-    } catch (err) {
-        console.log(err);
+    try {
+        // Get all departments
+        const dptData = await Department.findAll();
+    
+        // Serialize data so the template can read it
+        const departments = dptData.map((data) => data.get({ plain: true }));
+    
+        // Pass serialized data and session flag into template
+        res.render('dashboard', { 
+            departments, 
+        //   logged_in: req.session.logged_in 
+        });
+        } catch (err) {
         res.status(500).json(err);
-    }
+        }
 });
 
 
