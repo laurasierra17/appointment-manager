@@ -10,7 +10,20 @@ router.post('/login', async (req, res) => {
             res.status(404).json({ message: 'No user exists, please use an existing username or sign up.'});
             return;
         }
-        res.status(200).json(userData);
+
+        const validPassword = await userData.checkPassword(req.body.password);
+        
+        if (!validPassword) {
+            res.status(400).json({ message: 'Incorrect username or password'});
+            return;
+        }
+        
+        req.session.save(() => {
+            req.session.user_id = userData.id;
+            req.session.logged_in = true;
+
+            res.status(200).json(userData);
+          });
     } catch (err) {
         res.status(500).json(err);
     }
