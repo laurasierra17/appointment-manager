@@ -2,6 +2,7 @@
     <div class = "container">
         <h3 class = "title has-text-centered is-size-4">Please select the department for which you want to schedule an appointment for</h3>
         <div class = "columns mt-5 is-8 is-variable is-multiline">
+           {{#each departments as |department|}}
            <div class="column is-4-tablet is-4-desktop">
             <div class="card">
                 <div class="card-image has-text-centered px-6">
