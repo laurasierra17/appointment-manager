@@ -13,12 +13,6 @@ router.get('/profile/:id', async (req, res) => {
                     where: {
                         patient_id: 1,
                     },
-                    // include: {
-                    //     model: Doctor,
-                    //     where: {
-                    //         id: 
-                    //     }
-                    // }
                 }]
         });
 
@@ -34,19 +28,24 @@ router.get('/profile/:id', async (req, res) => {
         }
 
         // Iterate through the array of the patient's appointments and add their corresponding doctor's last name
-        const patientInfo = patient.map(async (patient) =>  {
+        const appointment = [];
+
+        for (var user of patient) {
             // Get the Doctor's name associated to the Appointment
-            const doctorData = await Doctor.findByPk(patient.appointment.doctor_id, {
+            const doctorData = await Doctor.findByPk(user.appointment.doctor_id, {
                 attributes: ['last_name']
             });
             const doctor = doctorData.get({ plain: true });
-            patient.doctor_name = doctor.last_name;
-            return patient;
-        })
-        res.json(patient)
+            user.doctor_name = doctor.last_name;
+            appointment.push(user);
+        }
 
         // Render profile page with information from the database
-        // res.render('profile', { ...patient })
+        res.render('profile', {
+            first_name: patientData.first_name,
+            last_name: patientData.last_name,
+            appointment
+        });
     } catch (err) {
         console.log(err)
         res.status(500).json(err);
