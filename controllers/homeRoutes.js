@@ -2,10 +2,10 @@ const router = require('express').Router();
 
 const { Patient, Appointment, Doctor, Department} = require('../models')
 
-
+const auth = require('../utils/auth');
 
 // Render profile page of logged in patient
-router.get('/profile/:id', async (req, res) => {
+router.get('/profile/:id', auth, async (req, res) => {
     try {
         // Find patient based on user id stored in session
         const patientData = await Patient.findByPk(req.params.id,
@@ -56,7 +56,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard', auth, async (req, res) => {
     try {
         // Get all departments
         const dptData = await Department.findAll();
