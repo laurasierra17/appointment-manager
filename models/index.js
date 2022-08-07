@@ -4,25 +4,23 @@ const Patient = require('./Patient');
 const Department = require('./Department');
 
 // Associations between Appointment and Patient
-Appointment.hasMany(Patient, { foreignKey: 'patient_id' });
-Patient.belongsTo(Appointment);
+Patient.belongsToMany(Appointment, { through: Appointment, foreignKey: 'patient_id' });
+Appointment.belongsToMany(Patient, { through: Appointment, foreignKey: 'id' });
 
-// // Associations between Appointment and Doctor
-Appointment.hasMany(Doctor, { foreignKey: 'doctor_id' });
-Doctor.belongsTo(Appointment);
+// Associations between Appointment and Doctor
+Doctor.belongsToMany(Appointment, { through: Appointment, foreignKey: 'doctor_id' });
+Appointment.belongsToMany(Doctor, { through: Appointment, foreignKey: 'id' });
 
-// Association between Doctor and Patient through Appointment
-// Doctor.belongsToMany(Patient, { as: 'patient', through: { model: Appointment} });
-// Patient.belongsToMany(Doctor, { as: 'doctor', through: { model: Appointment} });
-// Patient.belongsToMany(Doctor, { through: Appointment, foreignKey: 'patient_id' });
-// Patient.hasMany(Doctor, {foreignKey: 'doctor_id'});
+// Associations between Patient and Doctor
+Patient.belongsToMany(Doctor, { through: Appointment, foreignKey: 'patient_id', as: 'doctors' });
+Doctor.belongsToMany(Patient, { through: Appointment, foreignKey: 'doctor_id', as: 'patients' });
 
 // Association between Doctor and Department
-Doctor.hasOne(Department, { foreignKey: 'department_id'});
-Department.belongsTo(Doctor);
-
-// Department.hasMany(Doctor, { foreignKey: ''});
-// Doctor.belongsTo(Department, { foreignKey: 'id' });
+Department.hasMany(Doctor, {
+  foreignKey: 'department_id',
+  onDelete: 'CASCADE'
+})
+Doctor.belongsTo(Department, { foreignKey: 'department_id' });
 
 module.exports = {
     Appointment,

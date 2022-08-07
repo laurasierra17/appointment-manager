@@ -1,4 +1,4 @@
-<div class="profile pt-6 is-flex-direction-column">
+<div class="profile pt-6 is-flex is-flex-direction-column">
     <div class="is-justify-content-center">
         <h1 class="title is-3">Hi, {{first_name}} {{last_name}}!</h1>
         <h2 class="subtitle is-4">In this page, you are able to view your upcoming appointments and make as many changes
@@ -8,29 +8,31 @@
     <br>
     {{!-- Container with list of appointments. Most recently added are at the top --}}
     <div>
-        {{#if appointment}}
+        {{#if data}}
         <div class="container p-4" id="appointments">
             {{!-- {{#each appointments as |appointment|}} --}}
-            <div class="container is-flex is-flex-direction-row is-justify-content-space-between is-align-items-center"
+            <div class="container is-flex is-flex-direction-column"
                 id="appt-container">
                 {{!-- container left has date, time, reason for visit --}}
-                {{#each appointment as |appt|}}
-                <section id="appt-info">
-                    <p class="title is-4 m-0">Visit with Dr. {{appt.doctor_name}}</p>
-                    <p class="subtitle is-5 m-0">Date: {{format_date appt.appointment.visit_time}}</p>
-                    <p class="subtitle is-5 m-0">Time: {{format_time appt.appointment.visit_time}}</p>
-                    <br>
-                    <p class="subtitle is-5 m-0">Reason for visit: {{appt.appointment.visit_reason}}</p>
-                    <p class="subtitle is-5 m-0">Room Number: {{appt.appointment.room_number}}</p>
-                </section>
-                {{!-- container right has edit and cancel buttons --}}
-                <section class="is-flex-direction-row" id="appt-btns">
-                    <div>
-                        <button class="button is-dark">Edit</button>
-                        <button class="button is-dark">Cancel</button>
+                {{#each data as |appt|}}
+                <div class="is-flex is-flex-direction-row is-justify-content-space-between is-align-items-center pt-5 mt-5">
+                    <section id="appt-info">
+                        <p class="title is-4 m-0">Visit with Dr. {{appt.doctor_name}}</p>
+                        <p class="subtitle is-5 m-0">Date: {{format_date appt.appointment.visit_time}}</p>
+                        <p class="subtitle is-5 m-0">Time: {{appt.appointment.visit_time}}</p>
+                        <br>
+                        <p class="subtitle is-5 m-0">Reason for visit: {{appt.visit_reason}}</p>
+                        <p class="subtitle is-5 m-0">Room Number: {{appt.room_number}}</p>
+                    </section>
+                    {{!-- container right has edit and cancel buttons --}}
+                    <section class="is-flex-direction-row" id="appt-btns">
+                        <div>
+                            <button class="button is-dark">Edit</button>
+                            <button class="button is-dark">Cancel</button>
 
-                    </div>
-                </section>
+                        </div>
+                    </section>
+                </div>
                 {{/each}}
             </div>
 
