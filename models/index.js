@@ -10,10 +10,11 @@ Patient.belongsTo(Appointment, { foreignKey: 'id' });
 // // Associations between Appointment and Doctor
 Appointment.hasMany(Doctor, { foreignKey: 'doctor_id' });
 Doctor.belongsTo(Appointment, { foreignKey: 'id' });
+
 // Association between Doctor and Patient through Appointment
-// Doctor.belongsToMany(Patient, { through: Appointment });
-// Doctor.hasMany(Patient, {foreignKey: 'patient_id'});
-// Patient.belongsToMany(Doctor, { through: Appointment });
+// Doctor.belongsToMany(Patient, { as: 'patient', through: { model: Appointment} });
+// Patient.belongsToMany(Doctor, { as: 'doctor', through: { model: Appointment} });
+// Patient.belongsToMany(Doctor, { through: Appointment, foreignKey: 'patient_id' });
 // Patient.hasMany(Doctor, {foreignKey: 'doctor_id'});
 
 // Association between Doctor and Department
