@@ -7,13 +7,13 @@
 const login = async (event) => {
     event.preventDefault();
 
-    const username1 = $('username').value;
-    const password1 = $('password').value;
+    const user_name = $('#username').value;
+    const password = $('#password').value;
 
-    if(username1 && password1) {
-        const response = await fetch(`/api/users/${username1}`, {
+    if(username && password) {
+        const response = await fetch(`/api/users/${user_name}`, {
             method: "POST",
-            body: JSON.stringify({ username1, password1 }),
+            body: JSON.stringify({ user_name, password }),
             headers: { 'Content-Type': 'application/json'},
         });
         if (response.ok) {
@@ -27,14 +27,14 @@ const login = async (event) => {
 const signup = async (event) => {
     event.preventDefault();
 
-    const firstName = $('firstname').value;
-    const lastName = $('lastname').value;
-    const username2 = $('username2').value;
-    const password2 = $('password2').value;
-    if(username2 && password2 && firstName && lastName) {
+    const first_name = $('#firstname').value;
+    const last_name = $('#lastname').value;
+    const user_name = $('#username2').value;
+    const password = $('#password2').value;
+    if(user_name && password && first_name && last_name) {
         const response = await fetch(`/api/users`, {
             method: "POST",
-            body: JSON.stringify({ firstName, lastName, username2, password2 }),
+            body: JSON.stringify({ first_name, last_name, user_name, password }),
         });
         if (response.ok) {
             document.location.replace('/dashboard');
@@ -42,13 +42,13 @@ const signup = async (event) => {
             alert(response.statusText);
         }
     }
-}
+};
 // LOGIN PAGE < - - - - - - - - 
   
 
 
-document.getElementById('loginbtn').addEventListener('submit', login);
-document.getElementById('signupbtn').addEventListener('submit', signup)
+document.getElementById('loginbtn').addEventListener('click', login);
+document.getElementById('signupbtn').addEventListener('click', signup);
 // when we log in
 // const 
 //fetch(/api/email)
