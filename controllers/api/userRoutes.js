@@ -3,14 +3,14 @@ const { Patient } = require('../../models')
 
 
 // LOG IN
-router.get('/:username', async (req, res) => {
+router.post('/:username', async (req, res) => {
     try {
         const userData = await Patient.findByPk(req.params.username);
         if(!userData) {
             res.status(404).json({ message: 'No user exists, please use an existing username or sign up.'});
             return;
         }
-        res.redirect('/api/departments');
+        res.redirect('/dashboard');
     } catch (err) {
         res.status(500).json(err);
     }
