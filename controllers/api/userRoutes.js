@@ -19,8 +19,9 @@ router.post('/login', async (req, res) => {
 
 // SIGN UP
 router.post('/', async (req, res) => {
+    console.log(req.body);
     try {
-        console.log(req);
+        console.log(req.body);
         const userData = await Patient.create(req.body);
         req.session.save(() => {
             req.session.user_id = userData.id;

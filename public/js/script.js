@@ -7,11 +7,11 @@
 const login = async (event) => {
     event.preventDefault();
 
-    const user_name = $('#username').value;
-    const password = $('#password').value;
-
-    if(username && password) {
-        const response = await fetch(`/api/users/${user_name}`, {
+    const user_name = $('#username').val();
+    const password = $('#password').val();
+    console.log([user_name, password]);
+    if(user_name && password) {
+        const response = await fetch(`/api/users/login`, {
             method: "POST",
             body: JSON.stringify({ user_name, password }),
             headers: { 'Content-Type': 'application/json'},
@@ -26,15 +26,17 @@ const login = async (event) => {
 
 const signup = async (event) => {
     event.preventDefault();
-
-    const first_name = $('#firstname').value;
-    const last_name = $('#lastname').value;
-    const user_name = $('#username2').value;
-    const password = $('#password2').value;
+    console.log("hello");
+    const first_name = $('#firstname').val();
+    const last_name = $('#lastname').val();
+    const user_name = $('#username2').val();
+    const password = $('#password2').val();
+    console.log([first_name, last_name, user_name, password]);
     if(user_name && password && first_name && last_name) {
         const response = await fetch(`/api/users`, {
             method: "POST",
             body: JSON.stringify({ first_name, last_name, user_name, password }),
+            headers: { 'Content-Type': 'application/json'},
         });
         if (response.ok) {
             document.location.replace('/dashboard');
@@ -47,8 +49,8 @@ const signup = async (event) => {
   
 
 
-document.getElementById('loginbtn').addEventListener('click', login);
-document.getElementById('signupbtn').addEventListener('click', signup);
+$('#form1').submit(login);
+$('#form2').submit(signup);
 // when we log in
 // const 
 //fetch(/api/email)
