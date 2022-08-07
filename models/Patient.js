@@ -1,7 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
-// const { DataTypes, DataTypes, DataTypes, DataTypes } = require('sequelize/types');
 
 class Patient extends Model {
   checkPassword(loginPw) {
@@ -31,6 +30,7 @@ Patient.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {isAlphanumeric:true},
+      unique: true,
     },
     password: {
       type: DataTypes.STRING,
