@@ -30,14 +30,12 @@ Doctor.init(
         }
     },
     shift_start: {
-        type: DataTypes.DATE,
+        type: DataTypes.TIME,
         allowNull: false,
-        validate: {isDate: true},
     },
     shift_end: {
-        type: DataTypes.DATE,
+        type: DataTypes.TIME,
         allowNull: false,
-        validate: {isDate: true},
     },
   },
   {
