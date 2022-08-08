@@ -1,77 +1,76 @@
+<header>
+  <h1 class="mytitle">Appointment Sign Up</h1>
+</header>
 
-      <header>
-        <h1 class="mytitle">Appointment Sign Up</h1>
-      </header>
 
-      
-     <section class="columns is-8">
-        <div class="column is-two-fifths hey">
-            <div class="box docard">
-                <h3 class="appointmenthead">Create an Appointment</h3>
-                <div id="d1" class="dropdown ddown">
-                    <div class="dropdown-trigger">
-                      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                        <span>Select a Doctor</span>
-                        <span class="icon is-small">
-                          <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                      </button>
-                    </div>
-                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                      <div class="dropdown-content">
-                        {{#each doctor as |doc|}}
-                        <a href="#" class="dropdown-item">
-                          {{doc.first_name}} {{doc.last_name}}
-                        </a>
-                        {{/each}}
-                      </div>
-                    </div>
-                  </div>
-                  <div id="d2" class="dropdown ddown">
-                    <div class="dropdown-trigger">
-                      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                        <span>Select a time</span>
-                        <span class="icon is-small">
-                          <i class="fas fa-angle-down"></i>
-                        </span>
-                      </button>
-                    </div>
-                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                      <div class="dropdown-content">
-                        <a href="#" class="dropdown-item">
-                          9:00 AM
-                        </a>
-                        <a href="#" class="dropdown-item">
-                          10:00 AM
-                        </a>
-                        <a href="#" class="dropdown-item">
-                          11:00 AM
-                        </a>
-                        <a href="#" class="dropdown-item">
-                          12:00 PM
-                        </a>
-                        <a href="#" class="dropdown-item">
-                          1:00 PM
-                        </a>
-                        <a href="#" class="dropdown-item">
-                          2:00 PM
-                        </a>
-                        <a href="#" class="dropdown-item">
-                          3:00 PM
-                        </a>
-                        <a href="#" class="dropdown-item">
-                          4:00 PM
-                        </a>
-                        <a href="#" class="dropdown-item">
-                          5:00 PM
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <textarea class="textarea" placeholder="Reason for visit"></textarea>
-                  <button id="appointment_submit" class="button is-link submitapp">Submit</button>
-              </div>
+<section class="columns is-8">
+  <div class="column is-two-fifths hey">
+    <div class="box docard">
+      <h3 class="appointmenthead">Create an Appointment</h3>
+      <div id="d1" class="dropdown ddown">
+        <div class="dropdown-trigger">
+          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+            <span>Select a Doctor</span>
+            <span class="icon is-small">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
         </div>
-     </section>
+        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+          <div class="dropdown-content">
+            {{#each doctor as |doc|}}
+            <a href="#" class="dropdown-item">
+              {{doc.first_name}} {{doc.last_name}}
+            </a>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+      <div id="d2" class="dropdown ddown">
+        <div class="dropdown-trigger">
+          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+            <span>Select a time</span>
+            <span class="icon is-small">
+              <i class="fas fa-angle-down"></i>
+            </span>
+          </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+          <div class="dropdown-content">
+            <a href="#" class="dropdown-item">
+              9:00 AM
+            </a>
+            <a href="#" class="dropdown-item">
+              10:00 AM
+            </a>
+            <a href="#" class="dropdown-item">
+              11:00 AM
+            </a>
+            <a href="#" class="dropdown-item">
+              12:00 PM
+            </a>
+            <a href="#" class="dropdown-item">
+              1:00 PM
+            </a>
+            <a href="#" class="dropdown-item">
+              2:00 PM
+            </a>
+            <a href="#" class="dropdown-item">
+              3:00 PM
+            </a>
+            <a href="#" class="dropdown-item">
+              4:00 PM
+            </a>
+            <a href="#" class="dropdown-item">
+              5:00 PM
+            </a>
+          </div>
+        </div>
+      </div>
+      <textarea class="textarea" placeholder="Reason for visit"></textarea>
+      <button id="appointment_submit" class="button is-link submitapp">Submit</button>
+    </div>
+  </div>
+</section>
 
-    
+<script src="/js/menu.js"></script>
