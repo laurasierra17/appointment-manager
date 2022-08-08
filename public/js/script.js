@@ -58,14 +58,19 @@ $('#form2').submit(signup);
 // GET
 // serves up page with doctors of that department
 
-$('.dptmentBtn').click(() => {
+$('.dptmentBtn').click(async () => {
     let dptId = $('.dptmentBtn').attr("data-id");
     console.log(dptId);
     if(dptId) {
-        fetch(`/api/department/${dptId}`, {
+        const response = await fetch(`/api/department/${dptId}`, {
             method: "GET",
-            
-        })
+            body: JSON.stringify({dptId}),
+        });
+        if (response.ok) {
+            document.location.replace('/appointment');
+        } else {
+            alert(response.statusText);
+        }
     }
 })
 

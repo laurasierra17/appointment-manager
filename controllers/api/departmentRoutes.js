@@ -24,7 +24,7 @@ router.get('/:id', async (req, res) => {
             }
         });
         const doctorsList = docList.map(doc => doc.get({plain: true}));
-        res.json(docList);
+        res.json(doctorsList);
     } catch (err) {
         res.status(500).json(err);
     }
