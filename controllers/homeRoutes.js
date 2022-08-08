@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { Patient, Appointment, Doctor, Department} = require('../models')
+const { Patient, Appointment, Doctor, Department } = require('../models')
 
 const auth = require('../utils/auth');
 
@@ -21,7 +21,7 @@ router.get('/profile/:id', auth, async (req, res) => {
             }
         );
 
-        const patient = patientData.get({plain: true});
+        const patient = patientData.get({ plain: true });
 
         // Iterate through the array of the patient's appointments and add their corresponding doctor's last name
         const data = [];
@@ -50,7 +50,9 @@ router.get('/profile/:id', auth, async (req, res) => {
 
 router.get('/', async (req, res) => {
     try {
-        res.render('login');
+        res.render('login', {
+            logged_in: req.session.logged_in
+        });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -64,12 +66,11 @@ router.get('/dashboard', auth, async (req, res) => {
         const departments = dptData.map((data) => data.get({ plain: true }));
         // Pass serialized data and session flag into template
         res.render('dashboard', {
-            departments,
-        logged_in: req.session.logged_in
+            departments
         });
-        } catch (err) {
+    } catch (err) {
         res.status(500).json(err);
-        }
+    }
 });
 
 
