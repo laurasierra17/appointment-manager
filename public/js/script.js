@@ -2,10 +2,10 @@
 // set up some routes and then we can connect them to the event listeners
 // possibly make this a middleware function 
 const login = async (event) => {
-    event.stopPropagation();
+    event.preventDefault();
 
-    const user_name = $('#username').val();
-    const password = $('#password').val();
+    const user_name = $('#username').val().trim();
+    const password = $('#password').val().trim();
     console.log([user_name, password]);
     if(user_name && password) {
         const response = await fetch(`/api/users/login`, {
@@ -22,12 +22,12 @@ const login = async (event) => {
 };
 
 const signup = async (event) => {
-    event.stopPropagation();
+    event.preventDefault();
     console.log("hello");
-    const first_name = $('#firstname').val();
-    const last_name = $('#lastname').val();
-    const user_name = $('#username2').val();
-    const password = $('#password2').val();
+    const first_name = $('#firstname').val().trim();
+    const last_name = $('#lastname').val().trim();
+    const user_name = $('#username2').val().trim();
+    const password = $('#password2').val().trim();
     console.log([first_name, last_name, user_name, password]);
     if(user_name && password && first_name && last_name) {
         const response = await fetch(`/api/users`, {

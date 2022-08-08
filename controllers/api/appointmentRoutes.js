@@ -6,8 +6,12 @@ router.post('/', async (req, res) => {
     try {
         // Through the request, we get the doctor's and patient's ids, time of appt, reason for visit, and room number
         const newAppt = await Appointment.create({
-            ...req.body,
-            patient_id: req.session.user_id
+            doctor_id: req.body.docId,
+            patient_id: req.session.user_id,
+            visit_date: req.body.date,
+            visit_time: req.body.time,
+            visit_reason: req.body.inputReason,
+            room_number: Math.floor(Math.random() * (555 - 100 + 1) + 100)
         });
 
         res.status(200).json(newAppt);

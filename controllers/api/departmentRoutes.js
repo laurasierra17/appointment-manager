@@ -27,7 +27,8 @@ router.get('/:id', async (req, res) => {
         const doctor = doctorsList[0].doctors;
         console.log(doctor);
         res.render('appointment', {
-            doctor
+            doctor,
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err);
