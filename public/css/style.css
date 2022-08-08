@@ -18,3 +18,69 @@ body {
     max-width: 60%;
     margin: 0 auto;
 }
+
+.middle {
+    margin: auto;
+    margin-top: 3%;
+}
+
+input {
+    margin: 10px;
+}
+
+header {
+    background-color: rgb(240, 237, 215);
+    text-align: center;
+}
+
+.mytitle{
+font-size: 300%;
+font-weight:lighter;
+color: rgb(59, 54, 54);
+
+}
+
+h2 {
+    text-align: center;
+}
+
+html {
+    background-color: rgb(240, 237, 215);
+}
+
+.docard{
+    height: 100%;
+    width: 100%;
+    margin: 2%;
+    display: inline-block;
+}
+
+.doctor{
+    padding-bottom: 15%;
+    padding-left: 3%;
+    font-size: 150%;
+}
+
+.hey{
+    margin: auto;
+}
+
+nav {
+    margin-bottom: 1%;
+}
+
+.ddown {
+    margin-top: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+}
+
+.submitapp{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.appointmenthead {
+    font-size: 150%;
+    text-align: center ;
+}
