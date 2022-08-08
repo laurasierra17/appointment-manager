@@ -7,6 +7,7 @@ router.post('/login', async (req, res) => {
     try {
         const userData = await Patient.findOne({ where: {user_name: req.body.user_name}});
         if(!userData) {
+            console.log("no userdata")
             res.status(404).json({ message: 'No user exists, please use an existing username or sign up.'});
             return;
         }
@@ -14,6 +15,7 @@ router.post('/login', async (req, res) => {
         const validPassword = await userData.checkPassword(req.body.password);
         
         if (!validPassword) {
+            console.log("no password")
             res.status(400).json({ message: 'Incorrect username or password'});
             return;
         }

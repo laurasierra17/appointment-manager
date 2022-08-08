@@ -35,7 +35,6 @@ Appointment.init(
     visit_time: {
       type: DataTypes.TIME,
       allowNull: false,
-      validate: { isDate: true },
     },
     visit_reason: {
       type: DataTypes.STRING,
