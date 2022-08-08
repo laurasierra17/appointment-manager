@@ -5,10 +5,10 @@ const { Patient, Appointment, Doctor, Department } = require('../models')
 const auth = require('../utils/auth');
 
 // Render profile page of logged in patient
-router.get('/profile/:id', auth, async (req, res) => {
+router.get('/profile/', auth, async (req, res) => {
     try {
         // Find patient based on user id stored in session
-        const patientData = await Patient.findByPk(req.params.id,
+        const patientData = await Patient.findByPk(req.session.user_id,
             {
                 attributes: ['first_name', 'last_name'],
                 include: [
@@ -39,7 +39,8 @@ router.get('/profile/:id', auth, async (req, res) => {
         res.render('profile', {
             first_name: patient.first_name,
             last_name: patient.last_name,
-            data: [...data]
+            data: [...data],
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         console.log(err)
@@ -47,7 +48,7 @@ router.get('/profile/:id', auth, async (req, res) => {
     }
 });
 
-
+// Home/Login Page
 router.get('/', async (req, res) => {
     try {
         res.render('login', {
@@ -58,6 +59,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Dashboard page
 router.get('/dashboard', auth, async (req, res) => {
     try {
         // Get all departments
@@ -66,7 +68,8 @@ router.get('/dashboard', auth, async (req, res) => {
         const departments = dptData.map((data) => data.get({ plain: true }));
         // Pass serialized data and session flag into template
         res.render('dashboard', {
-            departments
+            departments,
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err);
