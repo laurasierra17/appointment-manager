@@ -2,7 +2,7 @@
 // set up some routes and then we can connect them to the event listeners
 // possibly make this a middleware function 
 const login = async (event) => {
-    event.preventDefault();
+    event.stopPropagation();
 
     const user_name = $('#username').val();
     const password = $('#password').val();
@@ -22,7 +22,7 @@ const login = async (event) => {
 };
 
 const signup = async (event) => {
-    event.preventDefault();
+    event.stopPropagation();
     console.log("hello");
     const first_name = $('#firstname').val();
     const last_name = $('#lastname').val();
@@ -63,19 +63,16 @@ $('.dptmentBtn').click(async (event) => {
     console.log(event.target.getAttribute("id"));
     if(dptId) {
         const response = await fetch(`/api/department/${dptId}`, {
-            method: "POST",
-            body: JSON.stringify({dptId}),
+            method: "GET",
         });
         
         if (response.ok) {
-            document.location.replace('/appointment');
+            document.location.replace(`/api/department/${dptId}`);
         } else {
             alert(response.statusText);
         }
     }
-})
-
-
+});
 
 
 // DOCTOR PAGE/CREATE APPOINTMENT < - - - - - - - - 
