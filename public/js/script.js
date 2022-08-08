@@ -58,14 +58,15 @@ $('#form2').submit(signup);
 // GET
 // serves up page with doctors of that department
 
-$('.dptmentBtn').click(async () => {
-    let dptId = $('.dptmentBtn').attr("data-id");
-    console.log(dptId);
+$('.dptmentBtn').click(async (event) => {
+    let dptId = event.target.getAttribute("id");
+    console.log(event.target.getAttribute("id"));
     if(dptId) {
         const response = await fetch(`/api/department/${dptId}`, {
-            method: "GET",
+            method: "POST",
             body: JSON.stringify({dptId}),
         });
+        
         if (response.ok) {
             document.location.replace('/appointment');
         } else {

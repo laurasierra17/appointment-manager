@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.post('/:id', async (req, res) => {
     try {
         const docList = await Department.findAll({
             include: {
@@ -24,7 +24,10 @@ router.get('/:id', async (req, res) => {
             }
         });
         const doctorsList = docList.map(doc => doc.get({plain: true}));
-        res.json(doctorsList);
+        res.render('appointment', {
+            doctorsList,
+        logged_in: req.session.logged_in
+        });
     } catch (err) {
         res.status(500).json(err);
     }
