@@ -41,6 +41,13 @@
     "department_id": "6",
     "shift_start": "5:00:00",
     "shift_end": "19:00:00"
+  },
+  {
+    "first_name": "Dr.",
+    "last_name": "Strange",
+    "department_id": "1",
+    "shift_start": "10:00:00",
+    "shift_end": "16:00:00"
   }
 ]
 
