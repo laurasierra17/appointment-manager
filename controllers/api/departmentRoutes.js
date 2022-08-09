@@ -13,6 +13,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Once the user selects a department, take them to the create appointments page
 router.get('/:id', async (req, res) => {
     try {
         const docList = await Department.findAll({
@@ -25,7 +26,7 @@ router.get('/:id', async (req, res) => {
         });
         const doctorsList = docList.map(doc => doc.get({plain: true}));
         const doctor = doctorsList[0].doctors;
-        console.log(doctor);
+
         res.render('appointment', {
             doctor,
             logged_in: req.session.logged_in

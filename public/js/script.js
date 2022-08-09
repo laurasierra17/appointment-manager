@@ -1,12 +1,10 @@
-
-// set up some routes and then we can connect them to the event listeners
-// possibly make this a middleware function 
+// Grabs user input for login and confirms they've already made an account
 const login = async (event) => {
     event.preventDefault();
 
     const user_name = $('#username').val().trim();
     const password = $('#password').val().trim();
-    console.log([user_name, password]);
+
     if(user_name && password) {
         const response = await fetch(`/api/users/login`, {
             method: "POST",
@@ -21,9 +19,10 @@ const login = async (event) => {
     }
 };
 
+// Grab user input for the creation of a new account
 const signup = async (event) => {
     event.preventDefault();
-    console.log("hello");
+
     const first_name = $('#firstname').val().trim();
     const last_name = $('#lastname').val().trim();
     const user_name = $('#username2').val().trim();
@@ -42,9 +41,6 @@ const signup = async (event) => {
         }
     }
 };
-// LOGIN PAGE < - - - - - - - - 
-  
-
 
 $('#form1').submit(login);
 $('#form2').submit(signup);
@@ -52,12 +48,7 @@ $('#form2').submit(signup);
 
 // DEPARTMENTS PAGE < - - - - - - - - 
 
-//user clicks department tile
-
-//fetch(/doctors/department)
-// GET
-// serves up page with doctors of that department
-
+// Serves up page with doctors of that department
 $('.dptmentBtn').click(async (event) => {
     let dptId = event.target.getAttribute("id");
     console.log(event.target.getAttribute("id"));
@@ -74,19 +65,13 @@ $('.dptmentBtn').click(async (event) => {
     }
 });
 
-
-// DOCTOR PAGE/CREATE APPOINTMENT < - - - - - - - - 
-// const
-// fetch(doctors/appointements)
-
-
 // Functionality for the hamburger menu
-// (function() {
-//     var burger = $('.navbar-toggle');
-//     var menu = $('.navbar-menu');
-//     burger.click(function() {
-//         burger.toggleClass('is-active');
-//         menu.toggleClass('is-active');
-//     });
-// })();
+(function() {
+    var burger = $('.navbar-toggle');
+    var menu = $('.navbar-menu');
+    burger.click(function() {
+        burger.toggleClass('is-active');
+        menu.toggleClass('is-active');
+    });
+})();
 

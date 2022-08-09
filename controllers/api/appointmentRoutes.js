@@ -43,10 +43,10 @@ router.put('/:id', async (req, res) => {
 // Delete an appointment
 router.delete('/:id', async (req, res) => {
     try {
-        const appData = await Appointment.destroy({
+        const apptData = await Appointment.destroy({
             where: {
                 id: req.params.id,
-                patient_id: req.session.patient_id
+                patient_id: req.session.user_id
             }
         });
 
@@ -55,8 +55,9 @@ router.delete('/:id', async (req, res) => {
             return;
         }
 
-        res.status(200).json(appData);
+        res.status(200).json(apptData);
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
