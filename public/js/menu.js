@@ -5,7 +5,6 @@ let docName;
 selectedDoctor.click((event) => {
   docName = event.target.textContent.trim();
   docId = event.target.getAttribute("data-id");
-  console.log(docId);
   $('#doctor-span').text(docName);
 })
 
@@ -19,7 +18,6 @@ selectedTime.click((event) => {
 
 // Grab the patient's selected date
 let date;
-// let date = $('#datepicker').datepicker("getDate");
 
 // Grab the patient's reason for visit
 const visitReason = $('#visit-reason');
@@ -60,8 +58,9 @@ dropdown2.addEventListener('click', function (event) {
   dropdown2.classList.toggle('is-active');
 });
 
+// Handles functionality of the datepicker
 $('#datepicker').datepicker({
-  onSelect: function(dateText, inst) {
+  onSelect: function (dateText, inst) {
     date = dateText;
   }
 });
