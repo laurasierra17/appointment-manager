@@ -40,7 +40,7 @@ const createAppt = async () => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      alert(response.statusText);
+      alert("you can only schedule one appointment for a given doctor at a time.");
     }
   }
 };
