@@ -2,7 +2,7 @@
 const selectedDoctor = $('.doc-options');
 let docId;
 let docName;
-selectedDoctor.click((event) => {
+selectedDoctor.on('click',(event) => {
   docName = event.target.textContent.trim();
   docId = event.target.getAttribute("data-id");
   $('#doctor-span').text(docName);
@@ -11,7 +11,7 @@ selectedDoctor.click((event) => {
 // Grab the patient's selected time and change dropdown default value
 const selectedTime = $('.time-option');
 let time;
-selectedTime.click((event) => {
+selectedTime.on('click', (event) => {
   time = event.target.textContent.trim();
   $('#time-span').text(time);
 })
@@ -22,7 +22,7 @@ let date;
 // Grab the patient's reason for visit
 const visitReason = $('#visit-reason');
 let inputReason;
-visitReason.change(() => {
+visitReason.on('change', () => {
   inputReason = visitReason.val();
 })
 
@@ -43,7 +43,7 @@ const createAppt = async () => {
   }
 };
 
-$('#appointment_submit').click(createAppt);
+$('#appointment_submit').on('click', createAppt);
 
 // Handle Bulma's dropdown menus
 var dropdown1 = document.getElementById('d1');
@@ -65,6 +65,6 @@ $('#datepicker').datepicker({
   }
 });
 
-$('button#remove').click((event) => {
+$('button#remove').on('click',(event) => {
   console.log(event.target);
 });

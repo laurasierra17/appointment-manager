@@ -13,45 +13,41 @@
 </head>
 
 <body>
-        <nav class="navbar is-link" role="navigation" aria-label="main navigation">
-            {{!-- Logo --}}
-            <div class="navbar-brand">
-                <a class="navbar-item" href="/">
-                    <img src="/images/HAM-logo.png" id="logo-img">
-                </a>
+    <nav class="navbar is-link" role="navigation" aria-label="main navigation">
+        {{!-- Logo --}}
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="/images/HAM-logo.png" id="logo-img">
+            </a>
 
-                {{!-- Visibility of hamburger menu for touch devices --}}
-                <a role="button" class="navbar-burger navbar-toggle" aria-label="menu" aria-expanded="false">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
+            {{!-- Visibility of hamburger menu for touch devices --}}
+            <a role="button" class="navbar-burger navbar-toggle" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
 
-            {{!-- Links --}}
-            {{#if logged_in}}
-            <div class="navbar-menu">
-                <div class="navbar-end">
-                    <a class="navbar-item" href="/dashboard">Dashboard</a>
-                    <a class="navbar-item" href="/profile">Profile</a>
-                    <div class="navbar-item">
-                        <div class="buttons" id="logout-btn">
-                            <a class="button is-light">Logout</a>
-                        </div>
+        {{!-- Links --}}
+        {{#if logged_in}}
+        <div class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="/dashboard">Dashboard</a>
+                <a class="navbar-item" href="/profile">Profile</a>
+                <div class="navbar-item">
+                    <div class="buttons" id="logout-btn">
+                        <a class="button is-light">Logout</a>
                     </div>
                 </div>
             </div>
-            {{/if}}
-        </nav>
+        </div>
+        {{/if}}
+    </nav>
 
-    {{!-- <main> --}}
-        {{{ body }}}
-        {{!-- </main> --}}
+    {{{ body }}}
 
     {{!-- jQuery --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/js/script.js"></script>
     <script src="/js/logout.js"></script>
 </body>
