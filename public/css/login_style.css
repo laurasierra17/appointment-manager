@@ -7,12 +7,6 @@ input {
     margin: 10px;
 }
 
-header {
-    background-color: rgb(240, 237, 215);
-    margin-top: 1%;
-    text-align: center;
-}
-
 .mytitle{
 font-size: 300%;
 font-weight:lighter;
@@ -22,8 +16,4 @@ color: rgb(59, 54, 54);
 
 h2 {
     text-align: center;
-}
-
-html {
-    background-color: rgb(240, 237, 215);
 }
