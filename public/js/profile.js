@@ -1,4 +1,4 @@
-
+// removes appt from cancel button
 
 $('button#removeApt').click(async (event) => {
     var aptId = event.target.getAttribute("data-id");
@@ -12,6 +12,4 @@ $('button#removeApt').click(async (event) => {
             alert(response.statusText);
         }
     }
-    
-    
 });
