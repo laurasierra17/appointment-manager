@@ -1,0 +1,21 @@
+{
+  "name": "appointment-manager",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "laurasierra17 <laura.sierra17@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/laurasierra17/appointment-manager",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~1.9.1",
+    "jquery-ui": "~1.10.3"
+  }
+}
