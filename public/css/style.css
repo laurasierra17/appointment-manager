@@ -29,8 +29,8 @@ input {
 }
 
 header {
-    background-color: rgb(240, 237, 215);
     text-align: center;
+    margin-top: 1%;
 }
 
 .mytitle{
@@ -45,7 +45,7 @@ h2 {
 }
 
 html {
-    background-color: rgb(240, 237, 215);
+    background-color: rgb(255, 255, 255);
 }
 
 .docard{
