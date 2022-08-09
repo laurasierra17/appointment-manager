@@ -15,37 +15,37 @@
                 {{!-- container left has date, time, reason for visit --}}
                 {{#each data as |appt|}}
                 <div class="box">
-                <div class="is-flex is-flex-direction-row is-justify-content-space-between is-align-items-center pt-5 mt-5">
-                    <section id="appt-info">
-                        <p class="title is-4 m-0">Visit with Dr. {{appt.doctor_name}}</p>
-                        <p class="subtitle is-5 m-0">Date: {{format_date appt.visit_date}}</p>
-                        <p class="subtitle is-5 m-0">Time: {{appt.visit_time}}</p>
-                        <br>
-                        <p class="subtitle is-5 m-0">Reason for visit: {{appt.visit_reason}}</p>
-                        <p class="subtitle is-5 m-0">Room Number: {{appt.room_number}}</p>
-                    </section>
-                    {{!-- container right has edit and cancel buttons --}}
-                    <section class="is-flex-direction-row" id="appt-btns">
-                        <div>
-                            
-                            <button data-id = "{{appt.id}}" id = 'removeApt' class="button is-dark">Cancel</button>
+                    <div class="is-flex is-flex-direction-row is-justify-content-space-between is-align-items-center">
+                        <section id="appt-info">
+                            <p class="title is-4 m-0">Visit with Dr. {{appt.doctor_name}}</p>
+                            <p class="subtitle is-5 m-0">Date: {{format_date appt.visit_date}}</p>
+                            <p class="subtitle is-5 m-0">Time: {{appt.visit_time}}</p>
+                            <br>
+                            <p class="subtitle is-5 m-0">Reason for visit: {{appt.visit_reason}}</p>
+                            <p class="subtitle is-5 m-0">Room Number: {{appt.room_number}}</p>
+                        </section>
+                        {{!-- container right has edit and cancel buttons --}}
+                        <section class="is-flex-direction-row" id="appt-btns">
+                            <div>
 
-                        </div>
-                    </section>
+                                <button data-id="{{appt.id}}" id='removeApt' class="button is-dark">Cancel</button>
+
+                            </div>
+                        </section>
+                    </div>
                 </div>
+                {{/each}}
             </div>
-            {{/each}}
-        </div>
 
+        </div>
+        {{else}}
+        <h3>You have not scheduled an appointment yet.</h3>
+        {{/if}}
     </div>
-    {{else}}
-    <h3>You have not scheduled an appointment yet.</h3>
-    {{/if}}
-</div>
 
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="/js/profile.js"></script>
