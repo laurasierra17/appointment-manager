@@ -43,7 +43,6 @@ router.get('/profile/', auth, async (req, res) => {
             logged_in: req.session.logged_in
         });
     } catch (err) {
-        console.log(err)
         res.status(500).json(err);
     }
 });
@@ -51,7 +50,7 @@ router.get('/profile/', auth, async (req, res) => {
 // Home/Login Page
 router.get('/', async (req, res) => {
     try {
-        if(req.session.logged_in) {
+        if (req.session.logged_in) {
             res.redirect('/dashboard');
             return;
         }
