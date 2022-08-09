@@ -42,14 +42,14 @@ const signup = async (event) => {
     }
 };
 
-$('#form1').submit(login);
-$('#form2').submit(signup);
+$('#form1').on('submit',login);
+$('#form2').on('submit', signup);
 
 
 // DEPARTMENTS PAGE < - - - - - - - - 
 
 // Serves up page with doctors of that department
-$('.dptmentBtn').click(async (event) => {
+$('.dptmentBtn').on('click',async (event) => {
     let dptId = event.target.getAttribute("id");
     console.log(event.target.getAttribute("id"));
     if(dptId) {
@@ -69,7 +69,7 @@ $('.dptmentBtn').click(async (event) => {
 (function() {
     var burger = $('.navbar-toggle');
     var menu = $('.navbar-menu');
-    burger.click(function() {
+    burger.on('click', function() {
         burger.toggleClass('is-active');
         menu.toggleClass('is-active');
     });

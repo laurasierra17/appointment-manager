@@ -12,4 +12,4 @@ const logout = async () => {
     }
 }
 
-$("#logout-btn").click(logout);
+$("#logout-btn").on('click', logout);
