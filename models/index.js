@@ -6,7 +6,7 @@ const Department = require('./Department');
 
 // Associations between Appointment and Patient
 Patient.belongsToMany(Appointment, { through: Appointment, foreignKey: 'patient_id' });
-Appointment.belongsToMany(Patient, { through: Appointment, foreignKey: 'id'});
+Appointment.belongsToMany(Patient, { through: Appointment, foreignKey: 'id' });
 // Associations between Appointment and Doctor
 Doctor.belongsToMany(Appointment, { through: Appointment, foreignKey: 'doctor_id' });
 Appointment.belongsToMany(Doctor, { through: Appointment, foreignKey: 'id' });
