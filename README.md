@@ -32,6 +32,7 @@ Deployed on heroku at - - - >  http://ham-app-manager.herokuapp.com/ < - - - - -
 https://drive.google.com/file/d/17-QH_G12L5vz9IRiV-f18wTDlGGf55_U/view 
 
 
+## Code
 
 ## Contributors
 * Laura Sierra 
@@ -39,6 +40,7 @@ https://drive.google.com/file/d/17-QH_G12L5vz9IRiV-f18wTDlGGf55_U/view
     * github - ltmccarthy9
     * email - ltmccarthy9@gmail.com
 * Jeffrey Zhang
+
 
 
 
