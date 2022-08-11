@@ -22,6 +22,7 @@ is given an option to cancel the appointment as well.
 * NPM
 * Bcrypt
 * Web API
+* JSHint
 
 ## Deployed Site
 
@@ -38,29 +39,31 @@ https://drive.google.com/file/d/17-QH_G12L5vz9IRiV-f18wTDlGGf55_U/view
 
 ![Model Relationships](./public/assets/images/Model-Relationships.png)<br>
 This is the creation of relationships between our models to allow for dynamic fetching of information from our database.<br>
+
 ![Login Functionality](./public/assets/images/Login.png)<br>
 Small snippet showing how the user's login information was fetched, confirming they've already made an account, and directs the user to the dashboard page.
+
 ![Appointment-Handlebars](./public/assets/images/Appointment_snippet.png)<br>
 Small code snippet showing how we dynamically generated our Appointment html page using handlebars.
 
 
 ## Contributors
-* Laura Sierra 
-* Liam McCarthy 
-    * github - ltmccarthy9
-    * email - ltmccarthy9@gmail.com
+* Laura Sierra
+    * View my GitHub [profile](https://github.com/laurasierra17)
+    * Contact me at my [email](mailto:laura.sierra17@gmail.com) 
+* Liam McCarthy
+    * View my GitHub [profile](https://github.com/ltmccarthy9)
+    * Contact me at my [email](mailto:ltmccarthy9@gmail.com) 
 * Jeffrey Zhang
-    - View my Github [profile](https://github.com/jeffz98)
-    - Contact me at my [email](mailto:jeffz98@berkeley.edu) 
-
-
+    * View my Github [profile](https://github.com/jeffz98)
+    * Contact me at my [email](mailto:jeffz98@berkeley.edu) 
 
 
 ## License
 
 MIT License
 
-Copyright (c) 2022 Laura
+Copyright (c) 2022 Laura, Liam, and Jeffrey
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
