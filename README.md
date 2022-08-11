@@ -31,8 +31,18 @@ Deployed on heroku at - - - >  http://ham-app-manager.herokuapp.com/ < - - - - -
 
 https://drive.google.com/file/d/17-QH_G12L5vz9IRiV-f18wTDlGGf55_U/view 
 
+![App-Demo](./public/assets/images/App-Demo.gif)
 
-## Code
+
+## Code Snippets
+
+![Model Relationships](./public/assets/images/Model-Relationships.png)<br>
+This is the creation of relationships between our models to allow for dynamic fetching of information from our database.<br>
+![Login Functionality](./public/assets/images/Login.png)<br>
+Small snippet showing how the user's login information was fetched, confirming they've already made an account, and directs the user to the dashboard page.
+![Appointment-Handlebars](./public/assets/images/Appointment_snippet.png)<br>
+Small code snippet showing how we dynamically generated our Appointment html page using handlebars.
+
 
 ## Contributors
 * Laura Sierra 
@@ -40,6 +50,8 @@ https://drive.google.com/file/d/17-QH_G12L5vz9IRiV-f18wTDlGGf55_U/view
     * github - ltmccarthy9
     * email - ltmccarthy9@gmail.com
 * Jeffrey Zhang
+    - View my Github [profile](https://github.com/jeffz98)
+    - Contact me at my [email](mailto:jeffz98@berkeley.edu) 
 
 
 
