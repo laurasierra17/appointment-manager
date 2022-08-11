@@ -64,7 +64,3 @@ $('#datepicker').datepicker({
     date = dateText;
   }
 });
-
-$('button#remove').on('click',(event) => {
-  console.log(event.target);
-});
