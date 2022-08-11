@@ -27,7 +27,7 @@ const signup = async (event) => {
     const last_name = $('#lastname').val().trim();
     const user_name = $('#username2').val().trim();
     const password = $('#password2').val().trim();
-    console.log([first_name, last_name, user_name, password]);
+
     if(user_name && password && first_name && last_name) {
         const response = await fetch(`/api/users`, {
             method: "POST",
@@ -51,7 +51,7 @@ $('#form2').on('submit', signup);
 // Serves up page with doctors of that department
 $('.dptmentBtn').on('click',async (event) => {
     let dptId = event.target.getAttribute("id");
-    console.log(event.target.getAttribute("id"));
+    
     if(dptId) {
         const response = await fetch(`/api/department/${dptId}`, {
             method: "GET",
